@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Universal Authentication Manager</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="responsive-nav">
+        <div class="nav-brand">
+          <img src="assets/favicon_io/android-chrome-192x192.png" alt="Logo" class="logo-img">
+          <div class="logo">Universal Authentication Manager</div>
+        </div>
+        
+        <!--Hamburger Icon for Mobile -->
+        <button class="menu-toggle" id="menuToggle" title="Toggle Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Right Section -->
+        <div class="nav-actions" id="navActions">
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" data-page="home">Home</a></li>
+            <li><a href="about.html" data-page="about">About</a></li>
+            <li><a href="support.html" data-page="support">Support</a></li>
+            <li id="navLogin" class="hidden"><a href="login.html" data-page="login">Login</a></li>
+            <li id="navLogout"><a href="account.html" class="active" data-page="account">Account</a></li>
+          </ul>
+          <button id="themeToggle" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+    </nav>
+
+    <div id="notification-banner" class="hidden">
+        <p id="notification-message"></p>
+        <button id="closeBannerBtn">×</button>
+    </div>
+    
+    <div class="container">
+        <header class="page-header">
+            <h1>My Account <span class="accent-text"><i class="fas fa-user-shield"></i></span></h1>
+            <p class="header-subtitle">Manage your profile and security settings</p>
+        </header>
+        
+        <div id="userInfo" class="user-section">
+            <!-- User info will be inserted here -->
+        </div>
+        
+        <!-- Account Navigation -->
+        <div id="accountNav" class="account-nav">
+            <a href="index.html" class="account-nav-btn">
+                <i class="fas fa-key"></i> My Passwords
+            </a>
+            <a href="#" id="settingsBtn" class="account-nav-btn">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <div id="logoutButton" class="account-nav-btn logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </div>
+        </div>
+        
+        <!-- Settings Section -->
+        <div id="settingsSection" class="settings-section hidden">
+            <h3><i class="fas fa-cog"></i> Account Settings</h3>
+            <div class="setting-item">
+                <div class="setting-label">Master Key Recovery</div>
+                <div class="setting-control">
+                    <button class="setting-button">Set Up</button>
+                </div>
+            </div>
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h4>Two-Factor Authentication</h4>
+                    <p>Add an extra layer of security to your account</p>
+                </div>
+                <div class="setting-control">
+                    <label class="switch">
+                        <input type="checkbox" id="twoFactorToggle" aria-label="Toggle Two-Factor Authentication">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="setting-item">
+                <div class="setting-label">Export Passwords</div>
+                <div class="setting-control">
+                    <button class="setting-button"><i class="fas fa-download"></i> Export</button>
+                </div>
+            </div>
+            <div class="setting-item">
+                <div class="setting-label">Delete Account</div>
+                <div class="setting-control">
+                    <button class="setting-button danger-btn"><i class="fas fa-trash"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/account.js"></script>
+</body>
+</html> 
